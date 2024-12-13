@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="CatCar - Аренда автомобилей быстро, удобно и недорого.">
     <meta name="author" content="Ваше Имя">
-    <title>CatCar - Аренда автомобилей</title>
+    <title>DogCar - Аренда автомобилей</title>
     <link rel="stylesheet" href="css/style.css">
 
 
@@ -18,7 +18,7 @@
                 <img src="images/logo.png" alt="CatCar Logo">
                
                     <div class="name-logo-info">
-                        <a href="index.html"><h1>CATCAR</h1>
+                        <a href="index.html"><h1>DOGCAR</h1>
                         <p>Аренда автомобилей быстро, удобно и недорого</p></a>
                     </div>
             </div>
@@ -33,123 +33,115 @@
                     </ul>
     </nav>
 <main>
-    <section class="booking">
+    <section class="filters">
         <div class="container">
-            <h2>Бронирование</h2>
-            <form class="booking-form">
+            <h2>Фильтры для автомобилей</h2>
+            <form class="filter-form">
                 <div class="form-group">
-                    <label for="car-class">Класс автомобиля</label>
-                    <select id="car-class" name="car-class">
+                    <label for="filter-class">Класс автомобиля</label>
+                    <select id="filter-class" name="filter-class">
+                        <option value="">Любой</option>
                         <option value="economy">Эконом</option>
                         <option value="premium">Премиум</option>
                         <option value="business">Бизнес</option>
                     </select>
                 </div>
                 <div class="form-group">
-                    <label for="car-brand">Марка автомобиля</label>
-                    <input type="text" id="car-brand" name="car-brand" placeholder="Введите марку автомобиля">
-                </div>
-                <div class="form-group">
-                    <label for="car-model">Модель автомобиля</label>
-                    <input type="text" id="car-model" name="car-model" placeholder="Введите модель автомобиля">
-                </div>
-                <div class="form-group">
-                    <label for="car-number">Номер автомобиля</label>
-                    <input type="text" id="car-number" name="car-number" placeholder="Введите номер автомобиля">
-                </div>
-                <div class="form-group">
-                    <label for="branch">Филиал</label>
-                    <select id="branch" name="branch">
-                        <option value="moscow">Москва</option>
-                        <option value="spb">Санкт-Петербург</option>
-                        <option value="kazan">Казань</option>
-                        <option value="novosibirsk">Новосибирск</option>
+                    <label for="filter-brand">Марка автомобиля</label>
+                    <select id="filter-brand" name="filter-brand">
+                        <option value="">Любая</option>
+                        <option value="hyundai">Hyundai</option>
+                        <option value="volkswagen">Volkswagen</option>
+                        <option value="toyota">Toyota</option>
+                        <option value="kia">Kia</option>
+                        <option value="skoda">Skoda</option>
+                        <option value="nissan">Nissan</option>
+                        <option value="renault">Renault</option>
+                        <option value="ford">Ford</option>
+                        <option value="mazda">Mazda</option>
+                        <option value="chevrolet">Chevrolet</option>
                     </select>
                 </div>
-                <div class="form-group">
-                    <label for="daily-price">Стоимость бронирования за день (руб.)</label>
-                    <input type="number" id="daily-price" name="daily-price" placeholder="Введите стоимость">
-                </div>
-                <div class="form-group">
-                    <label for="final-price">Финальная стоимость</label>
-                    <input type="text" id="final-price" name="final-price" readonly>
-                </div>
-                <button type="submit">Оформить бронирование</button>
+                <button type="submit">Применить фильтры</button>
             </form>
         </div>
+        
     </section>
+    <script src="js/filtr.js"></script>
 
     <section class="car-cards">
         <div class="container">
             <h2>Доступные автомобили</h2>
+            
             <div class="card-grid">
-                <div class="card">
+                <div class="catalog">
+                <div class="card" data-class="economy" data-brand="hyundai">
                     <img src="images/cars/hyundai_solaris.jpg" alt="Hyundai Solaris">
                     <h3>Hyundai Solaris</h3>
                     <p>Эконом-класс, 1000 руб./день</p>
                     <button>Выбрать</button>
                 </div>
-                <div class="card">
+                <div class="card" data-class="economy" data-brand="volkswagen">
                     <img src="images/cars/volkswagen_polo.jpg" alt="Volkswagen Polo">
                     <h3>Volkswagen Polo</h3>
                     <p>Эконом-класс, 1100 руб./день</p>
                     <button>Выбрать</button>
                 </div>
-                <div class="card">
+                <div class="card" data-class="business" data-brand="toyota">
                     <img src="images/cars/toyota_camry.jpg" alt="Toyota Camry">
                     <h3>Toyota Camry</h3>
                     <p>Бизнес-класс, 3500 руб./день</p>
                     <button>Выбрать</button>
                 </div>
-                <div class="card">
+                <div class="card" data-class="economy" data-brand="kia">
                     <img src="images/cars/kia_rio.jpg" alt="Kia Rio">
                     <h3>Kia Rio</h3>
                     <p>Эконом-класс, 1200 руб./день</p>
                     <button>Выбрать</button>
                 </div>
-                <div class="card">
+                <div class="card" data-class="premium" data-brand="skoda">
                     <img src="images/cars/skoda_octavia.jpg" alt="Skoda Octavia">
                     <h3>Skoda Octavia</h3>
                     <p>Премиум-класс, 2000 руб./день</p>
                     <button>Выбрать</button>
                 </div>
-                <div class="card">
+                <div class="card" data-class="business" data-brand="nissan">
                     <img src="images/cars/nissan_qashqai.jpg" alt="Nissan Qashqai">
                     <h3>Nissan Qashqai</h3>
                     <p>Бизнес-класс, 3000 руб./день</p>
                     <button>Выбрать</button>
                 </div>
-                <div class="card">
+                <div class="card" data-class="economy" data-brand="renault">
                     <img src="images/cars/renault_logan.jpg" alt="Renault Logan">
                     <h3>Renault Logan</h3>
                     <p>Эконом-класс, 1000 руб./день</p>
                     <button>Выбрать</button>
                 </div>
-                <div class="card">
+                <div class="card" data-class="premium" data-brand="ford">
                     <img src="images/cars/ford_focus.jpg" alt="Ford Focus">
                     <h3>Ford Focus</h3>
                     <p>Премиум-класс, 2000 руб./день</p>
                     <button>Выбрать</button>
                 </div>
-                <div class="card">
+                <div class="card" data-class="business" data-brand="mazda">
                     <img src="images/cars/mazda_cx5.jpg" alt="Mazda CX-5">
                     <h3>Mazda CX-5</h3>
                     <p>Бизнес-класс, 3000 руб./день</p>
                     <button>Выбрать</button>
                 </div>
-                <div class="card">
+                <div class="card" data-class="premium" data-brand="hyundai">
                     <img src="images/cars/hyundai_creta.jpg" alt="Hyundai Creta">
                     <h3>Hyundai Creta</h3>
                     <p>Премиум-класс, 2200 руб./день</p>
                     <button>Выбрать</button>
                 </div>
-                <div class="card">
+                <div class="card" data-class="economy" data-brand="chevrolet">
                     <img src="images/cars/chevrolet_aveo.jpg" alt="Chevrolet Aveo">
                     <h3>Chevrolet Aveo</h3>
                     <p>Эконом-класс, 1100 руб./день</p>
                     <button>Выбрать</button>
                 </div>
-                <div class="card">
+                <div class="card" data-class="business" data-brand="volkswagen">
                     <img src="images/cars/volkswagen_tiguan.jpg" alt="Volkswagen Tiguan">
                     <h3>Volkswagen Tiguan</h3>
                     <p>Бизнес-класс, 4000 руб./день</p>
@@ -157,7 +149,9 @@
                 </div>
             </div>
         </div>
+        </div>
     </section>
+    
 </main>
 
     <!-- Footer -->
