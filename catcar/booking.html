@@ -1,1 +1,81 @@
-����� �뢮�� ������ �� ��࠭ (ECHO) �⪫�祭.
+<main>
+    <section class="booking">
+        <div class="container">
+            <h2>Бронирование</h2>
+            <form class="booking-form">
+                <div class="form-group">
+                    <label for="car-class">Класс автомобиля</label>
+                    <select id="car-class" name="car-class">
+                        <option value="economy">Эконом</option>
+                        <option value="premium">Премиум</option>
+                        <option value="business">Бизнес</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="car-brand">Марка автомобиля</label>
+                    <input type="text" id="car-brand" name="car-brand" placeholder="Введите марку автомобиля">
+                </div>
+                <div class="form-group">
+                    <label for="car-model">Модель автомобиля</label>
+                    <input type="text" id="car-model" name="car-model" placeholder="Введите модель автомобиля">
+                </div>
+                <div class="form-group">
+                    <label for="car-number">Номер автомобиля</label>
+                    <input type="text" id="car-number" name="car-number" placeholder="Введите номер автомобиля">
+                </div>
+                <div class="form-group">
+                    <label for="start-date">Дата бронирования</label>
+                    <input type="date" id="start-date" name="start-date">
+                </div>
+                <div class="form-group">
+                    <label for="end-date">Дата возврата</label>
+                    <input type="date" id="end-date" name="end-date">
+                </div>
+                <div class="form-group">
+                    <label for="branch">Филиал</label>
+                    <select id="branch" name="branch">
+                        <option value="moscow">Москва</option>
+                        <option value="spb">Санкт-Петербург</option>
+                        <option value="kazan">Казань</option>
+                        <option value="novosibirsk">Новосибирск</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="daily-price">Стоимость бронирования за день (руб.)</label>
+                    <input type="number" id="daily-price" name="daily-price" placeholder="Введите стоимость">
+                </div>
+                <div class="form-group">
+                    <label for="final-price">Финальная стоимость</label>
+                    <input type="text" id="final-price" name="final-price" readonly>
+                </div>
+                <button type="submit">Оформить бронирование</button>
+            </form>
+        </div>
+    </section>
+
+    <section class="car-cards">
+        <div class="container">
+            <h2>Доступные автомобили</h2>
+            <div class="card-grid">
+                <div class="card">
+                    <img src="images/cars/car1.jpg" alt="Car 1">
+                    <h3>Renault Logan</h3>
+                    <p>Эконом-класс, 1000 руб./день</p>
+                    <button>Выбрать</button>
+                </div>
+                <div class="card">
+                    <img src="images/cars/car2.jpg" alt="Car 2">
+                    <h3>Ford Focus</h3>
+                    <p>Премиум-класс, 2000 руб./день</p>
+                    <button>Выбрать</button>
+                </div>
+                <div class="card">
+                    <img src="images/cars/car3.jpg" alt="Car 3">
+                    <h3>Mazda CX-5</h3>
+                    <p>Бизнес-класс, 3000 руб./день</p>
+                    <button>Выбрать</button>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
