@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="CatCar - Аренда автомобилей быстро, удобно и недорого.">
+    <meta name="author" content="Ваше Имя">
+    <title>CatCar - Аренда автомобилей</title>
+    <link rel="stylesheet" href="css/style.css">
+
+
+</head>
+<body>
+    <!-- Header -->
+    <header class="site-header">
+        <div class="container">
+            <div class="logo">
+                <img src="images/logo.png" alt="CatCar Logo">
+               
+                    <div class="name-logo-info">
+                        <a href="index.html"><h1>CATCAR</h1>
+                        <p>Аренда автомобилей быстро, удобно и недорого</p></a>
+                    </div>
+            </div>
+            
+        </div>
+    </header>
+    <nav class="navigation">
+                    <ul>
+                        <li><a href="branches.html">Филиалы</a></li>
+                        <li><a href="booking.html">Бронирование</a></li>
+                        <li><a href="login.html">Личный кабинет</a></li>
+                    </ul>
+    </nav>
+
+    <main>
+        <section class="register">
+            <div class="container">
+                <h2>Регистрация</h2>
+                <form action="#" method="post" class="register-form">
+                    <label for="first-name">Имя</label>
+                    <input type="text" id="first-name" name="first-name" placeholder="Введите имя" required pattern="[\u0410-\u044F\s-]+">
+
+                    <label for="last-name">Фамилия</label>
+                    <input type="text" id="last-name" name="last-name" placeholder="Введите фамилию" required pattern="[\u0410-\u044F\s-]+">
+
+                    <label for="middle-name">Отчество</label>
+                    <input type="text" id="middle-name" name="middle-name" placeholder="Введите отчество (необязательно)" pattern="[\u0410-\u044F\s-]+">
+
+                    <label for="passport">Паспортные данные</label>
+                    <input type="text" id="passport" name="passport" placeholder="Введите серию и номер паспорта" required pattern="\d+">
+
+                    <label for="phone">Номер телефона</label>
+                    <input type="tel" id="phone" name="phone" placeholder="Введите номер телефона" required pattern="[\d\s\-+()]+">
+
+                    <label for="birth-date">Дата рождения</label>
+                    <input type="date" id="birth-date" name="birth-date" required>
+
+                    <label for="password">Пароль</label>
+                    <input type="password" id="password" name="password" placeholder="Введите пароль" required minlength="6">
+
+                    <label for="confirm-password">Повторите пароль</label>
+                    <input type="password" id="confirm-password" name="confirm-password" placeholder="Повторите пароль" required minlength="6">
+
+                    <div class="agreement">
+                        <input type="checkbox" id="data-agreement" name="data-agreement" required>
+                        <label for="data-agreement">Я согласен(-на) на обработку персональных данных</label>
+                    </div>
+
+                    <button type="submit">Зарегистрироваться</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+
+     <!-- Footer -->
+     <footer class="site-footer">
+        <div class="container">
+            <p>Телефон: <a href="tel:88005555555">8 (800) 555-55-55</a></p>
+            <nav class="footer-navigation">
+                <ul>
+                    <li><a href="branches.html">Филиалы</a></li>
+                    <li><a href="booking.html">Бронирование</a></li>
+                    <li><a href="login.html">Личный кабинет</a></li>
+                </ul>
+            </nav>
+        </div>
+    </footer>
+</body>
+</html>

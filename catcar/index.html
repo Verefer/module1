@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="CatCar - Аренда автомобилей быстро, удобно и недорого.">
+    <meta name="author" content="Ваше Имя">
+    <title>CatCar - Аренда автомобилей</title>
+    <link rel="stylesheet" href="css/style.css">
+
+
+</head>
+<body>
+    <!-- Header -->
+    <header class="site-header">
+        <div class="container">
+            <div class="logo">
+                <img src="images/logo.png" alt="CatCar Logo">
+               
+                    <div class="name-logo-info">
+                        <a href="index.html"><h1>CATCAR</h1>
+                        <p>Аренда автомобилей быстро, удобно и недорого</p></a>
+                    </div>
+            </div>
+            
+        </div>
+    </header>
+    <nav class="navigation">
+                    <ul>
+                        <li><a href="branches.html">Филиалы</a></li>
+                        <li><a href="booking.html">Бронирование</a></li>
+                        <li><a href="login.html">Личный кабинет</a></li>
+                    </ul>
+    </nav>
+    <!-- Main Content -->
+    <main>
+        <section class="promotions">
+            <div class="container">
+                <h2>Акции</h2>
+                <div class="slider">
+                    <div class="slides">
+                        <div class="slide">
+                            <img src="images/promo1.jpg" alt="Скидка 20% на аренду до конца месяца!">
+                            <p>Скидка 20% на аренду до конца месяца!</p>
+                        </div>
+                        <div class="slide">
+                            <img src="images/promo2.jpg" alt="Бесплатная мойка при аренде от 3 дней.">
+                            <p>Бесплатная мойка при аренде от 3 дней.</p>
+                        </div>
+                        <div class="slide">
+                            <img src="images/promo3.jpg" alt="Специальные цены на автомобили класса премиум.">
+                            <p>Специальные цены на автомобили класса премиум.</p>
+                        </div>
+                    </div>
+                    <div class="controls">
+                        <span class="prev" onclick="moveSlide(-1)">&#10094;</span>
+                        <span class="next" onclick="moveSlide(1)">&#10095;</span>
+                    </div>
+                </div>
+                <script src="js/script.js"></script>
+            </div>
+        </section>
+        
+
+       <!-- Search Form -->
+<section class="search-form">
+    <div class="container">
+        <h2>Найдите идеальный автомобиль</h2>
+        <form action="#" method="get">
+            <label for="color">Цвет авто:</label>
+            <select id="color" name="color">
+                <option value="red">Красный</option>
+                <option value="blue">Синий</option>
+                <option value="black">Черный</option>
+            </select>
+
+            <label for="class">Класс авто:</label>
+            <select id="class" name="class">
+                <option value="economy">Эконом</option>
+                <option value="premium">Премиум</option>
+            </select>
+
+            <label for="brand">Марка:</label>
+            <input type="text" id="brand" name="brand">
+
+            <label for="model">Модель:</label>
+            <input type="text" id="model" name="model">
+
+            <button type="submit">Поиск</button>
+        </form>
+    </div>
+</section>
+
+<section class="news">
+    <div class="container">
+        <h2>Новости</h2>
+        <div class="news-list">
+            <div class="news-item">
+                <img src="images/moskvich.jpg" alt="Москвич для такси" class="news-image">
+                <div class="news-content">
+                    <h3>«Москвич» будет выпускать машины для такси и каршеринга Москвы и области</h3>
+                    <p>По словам Ликсутова, для рынка московского такси и каршеринга в год нужно выпускать от 30 до 40 тыс. новых машин. Власти города создали рабочую группу с компаниями-агрегаторами, чтобы определить технические моменты новых машин.</p>
+                </div>
+            </div>
+            <div class="news-item">
+                <img src="images/support.jpg" alt="Меры поддержки" class="news-image">
+                <div class="news-content">
+                    <h3>Заммэра Москвы Ликсутов рассказал о мерах поддержки такси и каршеринга</h3>
+                    <p>Услуги каршеринга и такси в Москве должны оставаться такими же доступными и безопасными, несмотря на экономическое давление. Об этом заявил заместитель мэра столицы по вопросам транспорта Максим Ликсутов на встрече с представителями компаний такси, операторов проката и каршеринга, где обсудили меры поддержки отрасли.</p>
+                </div>
+            </div>
+            <div class="news-item">
+                <img src="images/subsidies.jpg" alt="Субсидии для такси" class="news-image">
+                <div class="news-content">
+                    <h3>Власти Москвы удвоили субсидии на покупку автомобилей такси и каршеринга</h3>
+                    <p>Мера будет действовать в течение 2022 года. Она входит в часть пакета мер по стабилизации экономики Москвы в условиях санкций. В Москве в два раза увеличили размер субсидий на покупку автомобилей такси и каршеринга, мера будет действовать до конца года, сообщается на сайте мэра Сергея Собянина.</p>
+                </div>
+            </div>
+            <div class="news-item">
+                <img src="images/cash.jpg" alt="Оплата наличными" class="news-image">
+                <div class="news-content">
+                    <h3>Суд обязал каршеринг «Делимобиль» принимать наличные</h3>
+                    <p>Арбитражный суд Свердловской области признал незаконной возможность оплаты каршеринга «CAR» только безналичным способом. Это следует из решения суда по спору Роспотребнадзора с ООО «Каршеринг Руссия», первым внимание на него обратил «Коммерсантъ».</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="container">
+            <p>Телефон: <a href="tel:88005555555">8 (800) 555-55-55</a></p>
+            <nav class="footer-navigation">
+                <ul>
+                    <li><a href="branches.html">Филиалы</a></li>
+                    <li><a href="booking.html">Бронирование</a></li>
+                    <li><a href="login.html">Личный кабинет</a></li>
+                </ul>
+            </nav>
+        </div>
+    </footer>
+</body>
+</html>
