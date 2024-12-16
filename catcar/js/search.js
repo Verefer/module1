@@ -1,36 +1,51 @@
-document.addEventListener("DOMContentLoaded", () => {
-    // Данные карточек автомобилей
-    const carCards = [
-        { brand: "Hyundai", model: "Solaris", color: "metalik", class: "economy" },
-        { brand: "Volkswagen", model: "Polo", color: "cofe", class: "economy" },
-        { brand: "Toyota", model: "Camry", color: "black", class: "business" },
-        { brand: "Kia", model: "Rio", color: "red", class: "economy" },
-        { brand: "Skoda", model: "Octavia", color: "metalik", class: "premium" },
-        { brand: "Nissan", model: "Qashqai", color: "red", class: "business" },
-        { brand: "Renault", model: "Logan", color: "blue", class: "economy" },
-        { brand: "Ford", model: "Focus", color: "black", class: "premium" },
-        { brand: "Mazda", model: "CX-5", color: "blue", class: "business" },
-        { brand: "Hyundai", model: "Creta", color: "metalik", class: "premium" },
-        { brand: "Chevrolet", model: "Aveo", color: "gray", class: "economy" },
-        { brand: "Volkswagen", model: "Tiguan", color: "blue", class: "business" },
-    ];
+// search.js
 
-    // Функция для добавления уникальных значений в выпадающие списки
-    function populateSelect(selectId, key, data) {
-        const select = document.getElementById(selectId);
-        const uniqueValues = [...new Set(data.map(item => item[key]))];
+// Данные о карточках автомобилей
+const carCards = [
+    { brand: 'Hyundai', model: 'Solaris', color: 'Металлик', class: 'Эконом' },
+    { brand: 'Volkswagen', model: 'Polo', color: 'Кофейный', class: 'Эконом' },
+    { brand: 'Toyota', model: 'Camry', color: 'Чёрный', class: 'Бизнес' },
+    { brand: 'Kia', model: 'Rio', color: 'Красный', class: 'Эконом' },
+    { brand: 'Skoda', model: 'Octavia', color: 'Металлик', class: 'Премиум' },
+    { brand: 'Nissan', model: 'Qashqai', color: 'Красный', class: 'Бизнес' },
+    { brand: 'Renault', model: 'Logan', color: 'Синий', class: 'Эконом' },
+    { brand: 'Ford', model: 'Focus', color: 'Чёрный', class: 'Премиум' },
+    { brand: 'Mazda', model: 'CX-5', color: 'Синий', class: 'Бизнес' },
+    { brand: 'Hyundai', model: 'Creta', color: 'Металлик', class: 'Премиум' },
+    { brand: 'Chevrolet', model: 'Aveo', color: 'Серый', class: 'Эконом' },
+    { brand: 'Volkswagen', model: 'Tiguan', color: 'Синий', class: 'Бизнес' },
+];
 
-        uniqueValues.forEach(value => {
-            const option = document.createElement("option");
-            option.value = value.toLowerCase();
+// Функция для заполнения выпадающих списков
+function populateFilters() {
+    const colorSelect = document.getElementById('color');
+    const classSelect = document.getElementById('class');
+    const brandSelect = document.getElementById('brand');
+    const modelSelect = document.getElementById('model');
+
+    // Получаем уникальные значения из массива
+    const colors = [...new Set(carCards.map(car => car.color))];
+    const classes = [...new Set(carCards.map(car => car.class))];
+    const brands = [...new Set(carCards.map(car => car.brand))];
+    const models = [...new Set(carCards.map(car => car.model))];
+
+    // Функция для добавления опций в выпадающий список
+    function addOptions(selectElement, values) {
+        selectElement.innerHTML = '<option value="">Выберите</option>'; // Пустая опция
+        values.forEach(value => {
+            const option = document.createElement('option');
+            option.value = value;
             option.textContent = value;
-            select.appendChild(option);
+            selectElement.appendChild(option);
         });
     }
 
-    // Заполнение выпадающих списков для автомобилей
-    populateSelect("color", "color", carCards);
-    populateSelect("class", "class", carCards);
-    populateSelect("brand", "brand", carCards);
-    populateSelect("model", "model", carCards);
-});
+    // Заполняем списки
+    addOptions(colorSelect, colors);
+    addOptions(classSelect, classes);
+    addOptions(brandSelect, brands);
+    addOptions(modelSelect, models);
+}
+
+// Вызываем функцию при загрузке страницы
+document.addEventListener('DOMContentLoaded', populateFilters);
