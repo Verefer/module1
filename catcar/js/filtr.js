@@ -47,7 +47,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
             card.style.display = isClassMatch && isBrandMatch ? 'block' : 'none';
         });
-    });
+        });
 
     // --- Функция проверки заполненности формы ---
     function checkFormCompletion() {
@@ -60,7 +60,7 @@ document.addEventListener('DOMContentLoaded', function () {
         });
 
         submitButton.disabled = !isFormComplete; // Блокируем кнопку, если не все поля заполнены
-    }
+        }
 
     // Проверяем форму при загрузке страницы
     checkFormCompletion();
@@ -69,21 +69,5 @@ document.addEventListener('DOMContentLoaded', function () {
     requiredFields.forEach((field) => {
         field.addEventListener('input', checkFormCompletion);
         field.addEventListener('change', checkFormCompletion);
-    });
-
-    // --- Предупреждение при попытке отправить форму ---
-    form.addEventListener('submit', function (event) {
-        let isFormComplete = true;
-
-        requiredFields.forEach((field) => {
-            if (field.value.trim() === '') {
-                isFormComplete = false;
-            }
-        });
-
-        if (!isFormComplete) {
-            event.preventDefault(); // Останавливаем отправку формы
-            alert('Пожалуйста, заполните все поля перед оформлением бронирования.');
-        }
     });
 });

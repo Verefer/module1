@@ -67,7 +67,7 @@
         </div>
         
     </section>
-    
+    <script src="js/filtr.js"></script>
 
     <section class="car-cards">
         <div class="container">
@@ -154,47 +154,54 @@
     </section>
 
     <section class="client-data">
-    <h2>Введите данные клиента и автомобиля</h2>
-    <form>
-        <div class="form-group">
-            <label for="car-class">Класс автомобиля</label>
-            <select id="car-class" name="car-class" required>
-                <option value="">Выберите класс</option>
-                <option value="economy">Эконом</option>
-                <option value="premium">Премиум</option>
-                <option value="business">Бизнес</option>
-            </select>
-        </div>
-        <div class="form-group">
-            <label for="car-model">Модель автомобиля</label>
-            <select id="car-model" name="car-model" required>
-                <option value="">Выберите модель</option>
-            </select>
-        </div>
-        
-        <div class="form-group">
-            <label for="client-name">Имя</label>
-            <input type="text" id="client-name" name="client-name" placeholder="Введите имя" required>
-        </div>
-        <div class="form-group">
-            <label for="client-surname">Фамилия</label>
-            <input type="text" id="client-surname" name="client-surname" placeholder="Введите фамилию" required>
-        </div>
-        <button type="submit">Оформить бронирование</button>
-    </form>
-</section>    
-    
-    
-    <section class="final-cost">
-        <h2>Финальная стоимость</h2>
-        <p>Выбрано автомобилей: <span class="highlight" id="selected-cars">0</span></p>
-        <p>Сумма за день: <span class="highlight" id="daily-cost">0 руб.</span></p>
-        <p>Скидка: <span class="highlight" id="discount">0%</span></p>
-        <p>Итоговая стоимость: <span class="highlight" id="total-cost">0 руб.</span></p>
-        <button>Завершить бронирование</button>
-    </section>
+            <div class="container">
+                <h2>Данные клиента</h2>
+                <form class="client-form">
+                    <div class="form-group">
+                        <label for="client-name">Имя</label>
+                        <input type="text" id="client-name" name="client-name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="client-surname">Фамилия</label>
+                        <input type="text" id="client-surname" name="client-surname" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="license-number">Серия и номер водительского удостоверения</label>
+                        <input type="text" id="license-number" name="license-number" placeholder="1234 567890" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="client-phone">Номер телефона</label>
+                        <input type="tel" id="client-phone" name="client-phone" placeholder="+7 (___) ___-__-__" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="passport-data">Паспортные данные</label>
+                        <input type="text" id="passport-data" name="passport-data" placeholder="Серия и номер" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="bank-card">Выбор банковской карты</label>
+                        <select id="bank-card" name="bank-card">
+                            <option value="">Добавить новую карту</option>
+                            <option value="card1">**** 1234</option>
+                            <option value="card2">**** 5678</option>
+                        </select>
+                    </div>
+                    <button type="submit">Сохранить данные</button>
+                </form>
+            </div>
+        </section>
 
-        <script src="js/filtr.js defer"></script>
+        <section class="final-cost">
+            <div class="container">
+                <h2>Итоговая стоимость</h2>
+                <div class="cost-summary">
+                    <p>Выбранные автомобили: <span id="selected-cars">0</span></p>
+                    <p>Стоимость за день: <span id="daily-cost">0 руб.</span></p>
+                    <p>Скидка: <span id="discount">0%</span></p>
+                    <p>Итоговая стоимость: <span id="total-cost">0 руб.</span></p>
+                </div>
+                <button id="confirm-booking">Оформить бронирование</button>
+            </div>
+        </section>
         <script src="js/cost-calculation.js"></script>
 </main>
 
