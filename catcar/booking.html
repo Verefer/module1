@@ -67,7 +67,7 @@
         </div>
         
     </section>
-    <script src="js/filtr.js"></script>
+    
 
     <section class="car-cards">
         <div class="container">
@@ -150,8 +150,52 @@
             </div>
         </div>
         </div>
+            
     </section>
+
+    <section class="client-data">
+    <h2>Введите данные клиента и автомобиля</h2>
+    <form>
+        <div class="form-group">
+            <label for="car-class">Класс автомобиля</label>
+            <select id="car-class" name="car-class" required>
+                <option value="">Выберите класс</option>
+                <option value="economy">Эконом</option>
+                <option value="premium">Премиум</option>
+                <option value="business">Бизнес</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="car-model">Модель автомобиля</label>
+            <select id="car-model" name="car-model" required>
+                <option value="">Выберите модель</option>
+            </select>
+        </div>
+        
+        <div class="form-group">
+            <label for="client-name">Имя</label>
+            <input type="text" id="client-name" name="client-name" placeholder="Введите имя" required>
+        </div>
+        <div class="form-group">
+            <label for="client-surname">Фамилия</label>
+            <input type="text" id="client-surname" name="client-surname" placeholder="Введите фамилию" required>
+        </div>
+        <button type="submit">Оформить бронирование</button>
+    </form>
+</section>    
     
+    
+    <section class="final-cost">
+        <h2>Финальная стоимость</h2>
+        <p>Выбрано автомобилей: <span class="highlight" id="selected-cars">0</span></p>
+        <p>Сумма за день: <span class="highlight" id="daily-cost">0 руб.</span></p>
+        <p>Скидка: <span class="highlight" id="discount">0%</span></p>
+        <p>Итоговая стоимость: <span class="highlight" id="total-cost">0 руб.</span></p>
+        <button>Завершить бронирование</button>
+    </section>
+
+        <script src="js/filtr.js defer"></script>
+        <script src="js/cost-calculation.js"></script>
 </main>
 
     <!-- Footer -->

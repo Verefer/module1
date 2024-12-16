@@ -738,3 +738,97 @@ a{
     display: grid;
     grid-template-columns: repeat(3,1fr);
 }
+
+/* Стиль для формы бронирования */
+.client-data {
+    background-color: #f8f9fa;
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+.client-data h2 {
+    font-size: 24px;
+    margin-bottom: 15px;
+}
+
+.client-data form {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.client-data .form-group {
+    flex: 1 1 calc(50% - 20px);
+    min-width: 200px;
+}
+
+.client-data label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.client-data input, 
+.client-data select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+.client-data button {
+    padding: 14px 20px;
+    background-color: #28a745;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-top: 15px;
+}
+
+.client-data button:hover {
+    background-color: #218838;
+}
+
+/* Стиль для финальной стоимости */
+.final-cost {
+    background-color: #f8f9fa;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.final-cost h2 {
+    font-size: 24px;
+    margin-bottom: 15px;
+}
+
+.final-cost p {
+    font-size: 18px;
+    margin: 10px 0;
+}
+
+.final-cost .highlight {
+    font-weight: bold;
+    font-size: 20px;
+    color: #007bff;
+}
+
+/* Дополнительный стиль для кнопок */
+.final-cost button {
+    padding: 14px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-top: 15px;
+}
+
+.final-cost button:hover {
+    background-color: #0056b3;
+}
