@@ -1,38 +1,45 @@
 document.addEventListener('DOMContentLoaded', function () {
-    const selectedCars = [];
-    const carCards = document.querySelectorAll('.car-cards .card');
-    const totalCostEl = document.getElementById('total-cost');
-    const discountEl = document.getElementById('discount');
-    const dailyCostEl = document.getElementById('daily-cost');
-    const selectedCarsEl = document.getElementById('selected-cars');
+    const carCards = document.querySelectorAll('.card');
+    const selectedCarsElement = document.querySelector('#selected-cars');
+    const dailyCostElement = document.querySelector('#daily-cost');
+    const totalCostElement = document.querySelector('#total-cost');
+    const confirmBookingButton = document.querySelector('#confirm-booking');
     
+    let selectedCars = [];
+    let dailyCost = 0;
+    let totalCost = 0;
+
+    // Обработчик выбора автомобиля
     carCards.forEach(card => {
-        const selectButton = card.querySelector('button');
-        selectButton.addEventListener('click', function () {
-            const carName = card.querySelector('h3').textContent;
-            const carPrice = parseInt(card.querySelector('p').textContent.match(/\d+/)[0]);
+        const selectButton = card.querySelector('.select-car');
+        
+        selectButton.addEventListener('click', function() {
+            const carClass = card.getAttribute('data-class');
+            const carBrand = card.getAttribute('data-brand');
+            const carModel = card.getAttribute('data-model');
+            const carPrice = parseInt(card.getAttribute('data-price'));
             
-            // Добавляем автомобиль в список
-            selectedCars.push({ name: carName, price: carPrice });
-            updateCost();
+            // Добавление автомобиля в список выбранных
+            if (!selectedCars.includes(carModel)) {
+                selectedCars.push(carModel);
+                dailyCost += carPrice; // Добавляем стоимость этого автомобиля в общий расчет
+                totalCost = dailyCost; // Пока без скидок, просто стоимость по всем выбранным
+
+                // Обновляем отображение данных
+                selectedCarsElement.textContent = selectedCars.join(', ');
+                dailyCostElement.textContent = `${dailyCost} руб.`;
+                totalCostElement.textContent = `${totalCost} руб.`;
+            }
         });
     });
 
-    function updateCost() {
-        const totalDailyCost = selectedCars.reduce((sum, car) => sum + car.price, 0);
-        const discount = calculateDiscount(selectedCars.length);
-        const finalCost = totalDailyCost * (1 - discount / 100);
-
-        // Обновляем интерфейс
-        selectedCarsEl.textContent = selectedCars.length;
-        dailyCostEl.textContent = `${totalDailyCost} руб.`;
-        discountEl.textContent = `${discount}%`;
-        totalCostEl.textContent = `${Math.round(finalCost)} руб.`;
-    }
-
-    function calculateDiscount(carCount) {
-        // 5% скидка за каждые 3 часа бронирования, максимум 25%
-        const hours = carCount * 3; // Предположим 1 автомобиль = 3 часа
-        return Math.min(Math.floor(hours / 3) * 5, 25);
-    }
+    // Обработчик оформления бронирования
+    confirmBookingButton.addEventListener('click', function() {
+        if (selectedCars.length === 0) {
+            alert('Выберите хотя бы один автомобиль для бронирования!');
+        } else {
+            alert('Бронирование успешно оформлено!');
+            // Здесь можно добавить логику для отправки данных на сервер
+        }
+    });
 });

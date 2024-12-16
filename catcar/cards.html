@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="CatCar - Аренда автомобилей быстро, удобно и недорого.">
+    <meta name="author" content="Ваше Имя">
+    <title>DogCar - Аренда автомобилей</title>
+    <link rel="stylesheet" href="css/style.css">
+
+
+</head>
+<body>
+    <!-- Header -->
+    <header class="site-header">
+        <div class="container">
+            <div class="logo">
+                <img src="images/logo.png" alt="CatCar Logo">
+               
+                    <div class="name-logo-info">
+                        <a href="index.html"><h1>DOGCAR</h1>
+                        <p>Аренда автомобилей быстро, удобно и недорого</p></a>
+                    </div>
+            </div>
+            
+        </div>
+    </header>
+    <nav class="navigation">
+                    <ul>
+                        <li><a href="branches.html">Филиалы</a></li>
+                        <li><a href="booking.html">Бронирование</a></li>
+                        <li><a href="login.html">Личный кабинет</a></li>
+                    </ul>
+    </nav>
+    <main>
+        <section class="cards">
+            <div class="container">
+                <h2>Мои банковские карты</h2>
+    
+                <!-- Список привязанных карт -->
+                <div class="card-list">
+                    <!-- Пример карты -->
+                    <div class="card-money" data-card-type="visa" data-card-status="active">
+                        <p>Номер карты: **** **** **** 1234</p>
+                        <p>Тип карты: Visa</p>
+                        <p>Статус: Активна</p>
+                        <button class="remove-card">Удалить карту</button>
+                    </div>
+                    <div class="card-money" data-card-type="mastercard" data-card-status="inactive">
+                        <p>Номер карты: **** **** **** 5678</p>
+                        <p>Тип карты: MasterCard</p>
+                        <p>Статус: Закончился срок обслуживания</p>
+                        <button class="remove-card">Удалить карту</button>
+                    </div>
+                </div>
+    
+                <!-- Кнопка для открытия модального окна для добавления карты -->
+                <button id="add-card-button">Добавить банковскую карту</button>
+            </div>
+        </section>
+    
+        <!-- Модальное окно для добавления карты -->
+        <div id="add-card-modal" class="modal">
+            <div class="modal-content">
+                <button id="close-modal" class="close-btn">&times;</button>
+                <h2>Добавить банковскую карту</h2>
+                <form id="add-card-form">
+                    <label for="card-number">Номер карты</label>
+                    <input type="text" id="card-number" name="card-number" placeholder="1234 5678 9012 3456" maxlength="19" required>
+                    
+                    <label for="card-holder">Имя и фамилия держателя карты</label>
+                    <input type="text" id="card-holder" name="card-holder" placeholder="John Doe" required>
+                    
+                    <label for="expiry-date">Дата окончания</label>
+                    <input type="month" id="expiry-date" name="expiry-date" required>
+                    
+                    <label for="cvv">CVV/CVC</label>
+                    <input type="text" id="cvv" name="cvv" placeholder="123" maxlength="3" required>
+                    
+                    <button type="submit">Добавить карту</button>
+                    <button type="button" id="close-modal">Закрыть</button>
+                </form>
+            </div>
+        </div>
+    </main>
+    
+
+<script src="js/cards.js"></script>
+
+     <!-- Footer -->
+     <footer class="site-footer">
+        <div class="container">
+            <p>Телефон: <a href="tel:88005555555">8 (800) 555-55-55</a></p>
+            <nav class="footer-navigation">
+                <ul>
+                    <li><a href="branches.html">Филиалы</a></li>
+                    <li><a href="booking.html">Бронирование</a></li>
+                    <li><a href="login.html">Личный кабинет</a></li>
+                </ul>
+            </nav>
+        </div>
+    </footer>
+</body>
+</html>
