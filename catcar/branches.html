@@ -36,52 +36,25 @@
     <main>
         <section class="branches">
             <div class="container">
-                <h2>Наши филиалы</h2>
-                <div class="branches-list">
-                    <div class="branch">
-                        <img src="images/maps/moskow.png" alt="Филиал Москва">
-                        <h3>Филиал 1</h3>
-                        <p>Адрес: г. Москва, ул. Ленина, д. 10</p>
-                        <ul>
-                            <li>Hyundai Solaris</li>
-                            <li>Volkswagen Polo</li>
-                            <li>Toyota Camry</li>
-                        </ul>
-                    </div>
-                    <div class="branch">
-                        <img src="images/maps/piter.png" alt="Филиал Санкт-Петербург">
-                        <h3>Филиал 2</h3>
-                        <p>Адрес: г. Санкт-Петербург, Невский проспект, д. 20</p>
-                        <ul>
-                            <li>Kia Rio</li>
-                            <li>Skoda Octavia</li>
-                            <li>Nissan Qashqai</li>
-                        </ul>
-                    </div>
-                    <div class="branch">
-                        <img src="images/maps/kras.png" alt="Филиал Красноярск">
-                        <h3>Филиал 3</h3>
-                        <p>Адрес: г. Красноярск, ул. Брянская, д. 5</p>
-                        <ul>
-                            <li>Renault Logan</li>
-                            <li>Ford Focus</li>
-                            <li>Mazda CX-5</li>
-                        </ul>
-                    </div>
-                    <div class="branch">
-                        <img src="images/maps/Novos.png" alt="Филиал Новосибирск">
-                        <h3>Филиал 4</h3>
-                        <p>Адрес: г. Новосибирск, ул. Дуси Ковальчук, д. 21</p>
-                        <ul>
-                            <li>Hyundai Creta</li>
-                            <li>Chevrolet Aveo</li>
-                            <li>Volkswagen Tiguan</li>
-                        </ul>
-                    </div>
-                    
+                <h2>Филиалы и доступный транспорт</h2>
+                <div id="map" class="map">
+                    <div class="marker" style="top: 40%; left: 50%;" onclick="displayVehicles(branches[0].vehicles)">Филиал 1</div>
+                    <div class="marker" style="top: 50%; left: 60%;" onclick="displayVehicles(branches[1].vehicles)">Филиал 2</div>
+                    <div class="marker" style="top: 30%; left: 70%;" onclick="displayVehicles(branches[2].vehicles)">Филиал 3</div>
+                </div>
+                <div class="vehicle-list" id="vehicle-list">
+                    <h3>Доступные транспортные средства</h3>
+                    <ul id="vehicle-items">
+                        <li>Выберите филиал на карте, чтобы увидеть доступные автомобили</li>
+                    </ul>
                 </div>
             </div>
         </section>
+
+        <script src="js/branch_map.js"></script>
+            
+            
+
     </main>
         
 
