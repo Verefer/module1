@@ -17,7 +17,7 @@ function filterCards() {
     const cards = document.querySelectorAll('.car-card');
 
     cards.forEach(card => {
-        // Получаем атрибуты карточки для сравнения
+        // Получаем атрибуты карточки для сравнения, учитывая data-атрибуты
         const cardColor = card.getAttribute('data-color');
         const cardClass = card.getAttribute('data-class');
         const cardBrand = card.getAttribute('data-brand');
